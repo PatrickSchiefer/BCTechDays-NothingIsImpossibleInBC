@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BCAgent": {
+      "commandName": "Project",
+      "commandLineArgs": "-namespace:dokrelay.servicebus.windows.net -connectionname:dokrelay -keyname:dokrelay -key:key"
+    }
+  }
+}

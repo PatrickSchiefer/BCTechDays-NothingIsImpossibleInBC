@@ -1,0 +1,6 @@
+@MiddleLayer_HostAddress = http://localhost:5142
+
+GET {{MiddleLayer_HostAddress}}/printers/
+Accept: application/json
+
+###
