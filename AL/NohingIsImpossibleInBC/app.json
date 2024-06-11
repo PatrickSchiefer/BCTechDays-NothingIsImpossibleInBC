@@ -10,7 +10,14 @@
   "help": "",
   "url": "",
   "logo": "",
-  "dependencies": [],
+  "dependencies": [
+    {
+      "id": "71850005-df68-4f02-9458-818be2af3b41",
+      "name": "AzureServiceBusLibrary",
+      "publisher": "BCTech",
+      "version": "1.0.0.0"
+    }
+  ],
   "screenshots": [],
   "platform": "1.0.0.0",
   "application": "24.0.0.0",

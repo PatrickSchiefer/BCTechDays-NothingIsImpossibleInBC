@@ -120,7 +120,6 @@ namespace Microsoft.Dynamics.BusinessCentral.Agent.RequestDispatcher
 
         private PluginMethod FindMethod(string uri, string httpMethod)
         {
-            Debug.Assert(uri.StartsWith(this.listenerAddress));
 
             if (uri.Length < this.listenerAddress.Length + 1)
             {

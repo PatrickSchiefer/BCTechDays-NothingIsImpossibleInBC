@@ -2,7 +2,7 @@
   "profiles": {
     "BCAgent": {
       "commandName": "Project",
-      "commandLineArgs": "-namespace:dokrelay.servicebus.windows.net -connectionname:dokrelay -keyname:dokrelay -key:key"
+      "commandLineArgs": "-namespace:workshopday1.servicebus.windows.net -connectionname:myconnection -keyname:ListenKey -key:dYYGCOVERpgXKk9HVNgvTnNMdJzeTc2E6+ARmFHPEjA="
     }
   }
 }

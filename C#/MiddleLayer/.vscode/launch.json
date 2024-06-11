@@ -8,7 +8,7 @@
             "name": "Launch Dotnet",
             "type": "coreclr",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/Debug/net8.0-windows10.0.22621.0/BCAgent.dll",
+            "program": "${workspaceFolder}/bin/Debug/net8.0/MiddleLayer.dll",
             "preLaunchTask": "build",
             "args": [],
             "cwd": "${workspaceFolder}",

@@ -43,6 +43,8 @@ page 50400 PrinterList
             {
                 ApplicationArea = all;
                 Image = Delete;
+                Promoted = true;
+                PromotedCategory = Process;
                 trigger OnAction()
                 begin
                     rec.DeleteAll();
@@ -52,6 +54,8 @@ page 50400 PrinterList
             {
                 ApplicationArea = All;
                 Image = Print;
+                Promoted = true;
+                PromotedCategory = Process;
                 trigger OnAction()
                 var
                     printImplementation: Interface IPrinterList;

@@ -50,8 +50,8 @@ static void SendFileToBC(string path, string filename)
                 {
                     HttpRequestMessage httpRequestMessage = new HttpRequestMessage();
                     httpRequestMessage.Method = HttpMethod.Post;
-                    httpRequestMessage.RequestUri = new Uri("https://cosmo-alpaca.westeurope.cloudapp.azure.com/f03a1ec20fd3rest/api/PatrickSchiefer/DOK/v1.0/importData");
-                    httpRequestMessage.Headers.Add("Authorization", "Basic UFNjaGllZmVyODM1MTpJZXJ2MzEyNQ==");
+                    httpRequestMessage.RequestUri = new Uri("https://cosmo-alpaca.westeurope.cloudapp.azure.com/f0787d68461arest/api/PatrickSchiefer/DOK/v1.0/importData");
+                    httpRequestMessage.Headers.Add("Authorization", "Basic TOKEN");
                     httpRequestMessage.Content = JsonContent.Create(new { data = element });
                     Console.WriteLine($"Send {element} to BC");
                     httpClient.Send(httpRequestMessage);

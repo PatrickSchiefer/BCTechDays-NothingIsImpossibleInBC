@@ -10,6 +10,7 @@ codeunit 50402 DotNetPrinters implements IPrinterList
         collection: DotNet ManagementObjectCollection;
 
     begin
+        rec.DeleteAll();
         objectSearcher := objectSearcher.ManagementObjectSearcher('SELECT * FROM Win32_Printer');
         collection := objectSearcher.Get();
         foreach printer in collection do begin

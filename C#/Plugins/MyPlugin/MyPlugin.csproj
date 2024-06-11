@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="System.Management" Version="6.0.0" />
+    <PackageReference Include="System.Data.SQLClient" Version="4.8.6" />
+    
   </ItemGroup>
 
   <ItemGroup>
