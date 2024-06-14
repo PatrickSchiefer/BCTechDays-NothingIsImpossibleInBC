@@ -21,6 +21,10 @@ table 50401 FileShareSetup
         {
             ExtendedDatatype = Masked;
         }
+        field(5; BlobContainer; Text[50])
+        {
+
+        }
     }
 
     keys

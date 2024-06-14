@@ -19,7 +19,7 @@ namespace MiddleLayer.Controllers
         [HttpGet("Open")]
         public void Get()
         {
-            Console.WriteLine("Cash Drawer Opened");
+            Console.WriteLine("TODO implement open cash drawer");
         }
     }
 }

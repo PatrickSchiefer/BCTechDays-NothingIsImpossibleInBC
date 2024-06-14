@@ -2,7 +2,7 @@ namespace PatrickSchiefer.IO;
 using System.Azure.Storage.Files;
 using System.Azure.Storage;
 
-page 50401 FileDemo
+page 50405 BlobDemo
 {
     PageType = Card;
     ApplicationArea = All;
@@ -52,22 +52,19 @@ page 50401 FileDemo
                 PromotedCategory = Process;
                 trigger OnAction()
                 var
-                    FileClient: Codeunit "AFS File Client";
-                    AFSResponse: Codeunit "AFS Operation Response";
+                    FileClient: Codeunit "ABS Blob Client";
                     StorageServiceAuth: Codeunit "Storage Service Authorization";
+                    BlobOptions: Codeunit "ABS Optional Parameters";
                     fileSetup: Record FileShareSetup;
                 begin
                     fileSetup.Get();
-                    FileClient.Initialize(fileSetup.StorageAccount, fileSetup.Sharename,
+                    FileClient.Initialize(fileSetup.StorageAccount, fileSetup.BlobContainer,
                         StorageServiceAuth.UseReadySAS(fileSetup.SASToken));
 
-                    AFSResponse := FileClient.CreateFile(filename, StrLen(content));
-                    if (not AFSResponse.IsSuccessful()) then
-                        Error(AFSResponse.GetError());
-
-                    AFSResponse := FileClient.PutFileText(filename, content);
-                    if (not AFSResponse.IsSuccessful()) then
-                        Error(AFSResponse.GetError());
+                    if FileClient.BlobExists(filename) then
+                        FileClient.DeleteBlob(filename);
+                    FileClient.PutBlobAppendBlobText(filename, BlobOptions);
+                    FileClient.AppendBlockText(filename, content);
                 end;
             }
 
@@ -79,16 +76,15 @@ page 50401 FileDemo
 
                 trigger OnAction()
                 var
-                    FileClient: Codeunit "AFS File Client";
-                    AFSResponse: Codeunit "AFS Operation Response";
+                    FileClient: Codeunit "ABS Blob Client";
                     StorageServiceAuth: Codeunit "Storage Service Authorization";
                     fileSetup: Record FileShareSetup;
                 begin
                     fileSetup.Get();
                     FileClient.Initialize(fileSetup.StorageAccount,
-                                fileSetup.Sharename, StorageServiceAuth.UseReadySAS(fileSetup.SASToken));
+                                fileSetup.BlobContainer, StorageServiceAuth.UseReadySAS(fileSetup.SASToken));
 
-                    AFSResponse := FileClient.GetFileAsText(filename, content);
+                    FileClient.GetBlobAsText(filename, content);
                 end;
             }
 

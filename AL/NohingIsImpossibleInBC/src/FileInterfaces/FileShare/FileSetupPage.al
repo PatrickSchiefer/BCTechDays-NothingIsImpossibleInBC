@@ -24,6 +24,10 @@ page 50402 FileShareSetup
                 {
                     ToolTip = 'Specifies the value of the Sharename field.';
                 }
+                field(BlobContainer; Rec.BlobContainer)
+                {
+                    ToolTip = 'Specifies the value of the BlobContainer field.';
+                }
                 field(SharedKey; Rec.SASToken)
                 {
                     ToolTip = 'Specifies the value of the SharedKey field.';

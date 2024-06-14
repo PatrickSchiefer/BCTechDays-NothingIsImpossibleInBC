@@ -22,7 +22,7 @@ page 50000 ClientAddinDemo
         area(Processing)
         {
 
-            action(GetPrintersViaAddin)
+            action(OpenCashDrawer)
             {
                 ApplicationArea = All;
                 Image = Print;
